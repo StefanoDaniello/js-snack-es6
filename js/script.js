@@ -29,11 +29,16 @@ Id  Name                Grades
 let invitati=[ 'Brad Pitt', 'Johnny Depp', 'Lady Gaga', 'Cristiano Ronaldo', 'Georgina Rodriguez', 'Chiara Ferragni',  'George Clooney', 'Amal Clooney', 'Fedez', 'Amadeus', 'Fiorello']
 
 for(let i=0; i<invitati.length;i++){
-    let random=getRndInteger(1,5)
+    let tableName=getRndInteger(1,5)
+    let place=getRndInteger(1,5)
+    let nome=invitati[i]
     let lista=[
-        tableName='tableName',random,
-        guestName='Name',invitati[i],
-        place='place',random
+        {
+        tableName: tableName,
+        guestName: nome,
+        place: place
+        }
+        
     ]
     console.log(lista)
     function getRndInteger(min, max) {
