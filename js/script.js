@@ -26,16 +26,13 @@ Id  Name                Grades
 */
 
 // snack 1
-
-
 let invitati=[ 'Brad Pitt', 'Johnny Depp', 'Lady Gaga', 'Cristiano Ronaldo', 'Georgina Rodriguez', 'Chiara Ferragni',  'George Clooney', 'Amal Clooney', 'Fedez', 'Amadeus', 'Fiorello']
-
 
 for(let i=0; i<invitati.length;i++){
     let random=getRndInteger(1,5)
     let lista=[
         tableName='tableName',random,
-        guestName=invitati[i],
+        guestName='Name',invitati[i],
         place='place',random
     ]
     console.log(lista)
@@ -43,15 +40,6 @@ for(let i=0; i<invitati.length;i++){
         return Math.floor(Math.random() * (max - min + 1) ) + min;
     }
 }
-
-
-
-
-
-
-
-
-
 
 
 // snack 2
