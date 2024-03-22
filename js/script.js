@@ -70,17 +70,22 @@ let studenti=[
         grades: 84
     }
   
-]
+];
 
 let grades = 70
 let id= 120
 
 let aula1=studenti.filter((el)=>{
-    return el.grades > grades , el.id < id
+    return (el.grades > grades && el.id <= id)
 })
 console.log(aula1)
 
 let aula2=studenti.filter((el)=>{
-    return el.grades > grades , el.id > id
+    return (el.grades > grades && el.id > id)
 })
 console.log(aula2)
+
+let aula3=studenti.filter((el)=>{
+    return el.grades < grades
+})
+console.log(aula3)
