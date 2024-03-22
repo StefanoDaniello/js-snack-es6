@@ -25,6 +25,7 @@ Id  Name                Grades
 120 Francesca da Polenta    84
 */
 
+// snack 1
 
 
 
@@ -74,7 +75,7 @@ let studenti=[
 
 let grades = 70
 let id= 120
-
+/*
 let aula1=studenti.filter((el)=>{
     return (el.grades > grades && el.id <= id)
 })
@@ -84,8 +85,25 @@ let aula2=studenti.filter((el)=>{
     return (el.grades > grades && el.id > id)
 })
 console.log(aula2)
+*/
 
-let aula3=studenti.filter((el)=>{
-    return el.grades < grades
+
+
+let aula1=studenti.map((el)=>{
+    let lista={
+        id:el.id,
+        nome: el.nome.toUpperCase(),
+        grades: el.grades
+    }
+    return lista
+});
+console.log(aula1)
+
+let aula2=aula1.filter((el)=>{
+    return (el.grades > grades && el.id > id)
+})
+console.log(aula2)
+let aula3=aula1.filter((el)=>{
+    return (el.grades > grades && el.id <= id)
 })
 console.log(aula3)
