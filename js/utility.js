@@ -3,3 +3,4 @@ function getRndInteger(min, max) {
 }
 
 
+export{getRndInteger}

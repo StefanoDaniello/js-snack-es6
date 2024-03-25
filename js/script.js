@@ -25,6 +25,12 @@ Id  Name                Grades
 120 Francesca da Polenta    84
 */
 
+
+
+
+import {getRndInteger} from './utility.js'
+
+
 // snack 1
 let invitati=[ 'Brad Pitt', 'Johnny Depp', 'Lady Gaga', 'Cristiano Ronaldo', 'Georgina Rodriguez', 'Chiara Ferragni',  'George Clooney', 'Amal Clooney', 'Fedez', 'Amadeus', 'Fiorello']
 
@@ -130,15 +136,11 @@ SNACK 3
 Creare un array di oggetti:
 Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.
 Stampare in console la bici con peso minore utilizzando destructuring e template literal
-SNACK 4
-Creare un array di oggetti di squadre di calcio. Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
-Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.
-Generare numeri random al posto degli 0 nelle proprietà: punti fatti e falli subiti.
-Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
-BONUS
-Stampare in pagina oltre che in console!
-Buon pomeriggio e buon divertimento !!!! 
+
 */
+
+
+// snack 3
 
 let bici=[
     {
@@ -186,3 +188,58 @@ const {name,wheight}=nuovo
 console.log(`La bici meno pensate è: ${name} con un peso di ${wheight} kg`)
 const stContainer=document.querySelector('.st-container')
 stContainer.innerHTML=(`La bici meno pensate è: ${name} con un peso di ${wheight} kg`)
+
+
+
+// snack 4
+/*
+SNACK 4
+Creare un array di oggetti di squadre di calcio. Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
+Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.
+Generare numeri random al posto degli 0 nelle proprietà: punti fatti e falli subiti.
+Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
+BONUS
+Stampare in pagina oltre che in console!
+Buon pomeriggio e buon divertimento !!!! 
+*/
+
+let squadre=[
+    {
+        nome:'Barcellona',
+        punti:0,
+        falli:0
+    },
+    {
+        nome:'Napoli',
+        punti:0,
+        falli:0
+    },
+    {
+        nome:'Francia',
+        punti:0,
+        falli:0
+    },
+    {
+        nome:'Roma',
+        punti:0,
+        falli:0
+    }
+];
+
+const random=squadre.map((el)=>{
+    el.punti=getRndInteger(0,15)
+    el.falli=getRndInteger(0,15)
+    return el
+})
+console.log(random)
+
+let array=[]
+const container=document.getElementById('container')
+for(let i=0;i<random.length;i++){
+    let prova=random
+    array.push({punti:prova[i].punti,falli:prova[i].falli})
+    const li= document.createElement('li')
+    li.innerHTML=(`punti:${prova[i].punti},falli:${prova[i].falli}`)
+    container.appendChild(li)
+}
+console.log(array)
