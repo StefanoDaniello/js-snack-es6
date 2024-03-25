@@ -236,10 +236,10 @@ console.log(random)
 let array=[]
 const container=document.getElementById('container')
 for(let i=0;i<random.length;i++){
-    let prova=random
-    array.push({punti:prova[i].punti,falli:prova[i].falli})
+    const {punti,falli}=random[i]
+    array.push({punti,falli})
     const li= document.createElement('li')
-    li.innerHTML=(`punti:${prova[i].punti},falli:${prova[i].falli}`)
+    li.innerHTML=(`punti:${punti},falli:${falli}`)
     container.appendChild(li)
 }
 console.log(array)
