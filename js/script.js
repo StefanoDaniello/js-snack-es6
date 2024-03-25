@@ -30,7 +30,7 @@ let invitati=[ 'Brad Pitt', 'Johnny Depp', 'Lady Gaga', 'Cristiano Ronaldo', 'Ge
 
 for(let i=0; i<invitati.length;i++){
     let tableName=getRndInteger(1,5)
-    let place=getRndInteger(1,5)
+    let place=getRndInteger(1,3)
     let nome=invitati[i]
     let lista=[
         {
@@ -38,13 +38,16 @@ for(let i=0; i<invitati.length;i++){
         guestName: nome,
         place: place
         }
-        
-    ]
+    ];
     console.log(lista)
     function getRndInteger(min, max) {
         return Math.floor(Math.random() * (max - min + 1) ) + min;
     }
 }
+
+
+
+
 
 
 // snack 2
@@ -121,3 +124,62 @@ let aula3=aula1.filter((el)=>{
     return (el.grades > grades && el.id <= id)
 })
 console.log(aula3)
+
+/*
+SNACK 3
+Creare un array di oggetti:
+Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.
+Stampare in console la bici con peso minore utilizzando destructuring e template literal
+SNACK 4
+Creare un array di oggetti di squadre di calcio. Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
+Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.
+Generare numeri random al posto degli 0 nelle proprietà: punti fatti e falli subiti.
+Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
+BONUS
+Stampare in pagina oltre che in console!
+Buon pomeriggio e buon divertimento !!!! 
+*/
+
+let bici=[
+    {
+        name:'red',
+        wheight:10
+    },
+    {
+        name:'blue',
+        wheight:20
+    },
+    {
+        name:'yellow',
+        wheight:60
+    },
+    {
+        name:'green',
+        wheight:80
+    },
+    {
+        name:'white',
+        wheight:2
+    }
+    
+];
+
+
+
+
+
+function maggiore(a,b) {
+    if (a.wheight < b.wheight){
+      return -1;
+    }
+    else if (a.wheight > b.wheight){
+      return 1;
+    }
+    return 0;
+  }
+
+bici.sort(maggiore);
+console.log(bici);
+
+const {wheight: prova}=bici
+console.log(prova)
