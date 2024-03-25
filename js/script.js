@@ -159,12 +159,10 @@ let bici=[
     },
     {
         name:'white',
-        wheight:2
+        wheight:2000
     }
     
 ];
-
-
 
 
 
@@ -181,5 +179,8 @@ function maggiore(a,b) {
 bici.sort(maggiore);
 console.log(bici);
 
-const {wheight: prova}=bici
-console.log(prova)
+const nuovo=bici[0]
+console.log(nuovo)
+
+const {name,wheight}=nuovo
+console.log(`la bici meno pensate è: ${name} con un peso di ${wheight} kg`)
