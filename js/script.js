@@ -185,3 +185,4 @@ console.log(nuovo)
 const {name,wheight}=nuovo
 console.log(`La bici meno pensate è: ${name} con un peso di ${wheight} kg`)
 const stContainer=document.querySelector('.st-container')
+stContainer.innerHTML=(`La bici meno pensate è: ${name} con un peso di ${wheight} kg`)
